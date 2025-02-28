@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +9,10 @@
     <!-- <meta name="theme-color" content="#E3DFF2"> -->
     <meta name="theme-color" content="#000">
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
     <title>Tic Tac Toe</title>
 </head>
+
 <body>
     <header>
         <nav>
@@ -40,11 +42,57 @@
                         <label for="consent">I agree to the terms & conditions.</label>
                     </div>
                 </div>
-                <button id="nextButton">Next</button>
+                <button id="nextButton">
+                    <a>Next</a>
+                </button>
             </div>
         </div>
     </main>
+    <div class="game-container">
+        <div class="inner-game">
+            <div class="scoreboard">
+                <span class="player-x">Player X</span>
+                <span>Vs</span>
+                <span class="player-o">Player O</span>
+            </div>
+            <div class="score-board-control-buttons">
+                <div class="score">
+                    <div class="score-x">1</div>
+                    <div class="score-o">0</div>
+                </div>
+                <div class="board-control">
+                    <div class="board">
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                        <div class="cell"></div>
+                    </div>
+                    <div class="controls">
+                        <div class="turn-indicator">
+                            <span class="turn-x">x</span>
+                            <span class="turn-o">o</span>
+                        </div>
+                        <div class="timer"><span>Timer:</span> 1:00 Min</div>
+                    </div>
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="restart">Restart</button>
+                <button class="new-game">New Game</button>
+            </div>
+        </div>
+        <footer>
+            <span>Muhammad Muneeb</span>
+            <i class="ri-settings-3-fill"></i>
+        </footer>
+    </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>
