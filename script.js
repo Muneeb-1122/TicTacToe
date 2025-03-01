@@ -42,12 +42,12 @@ cells.forEach((box) => {
   box.addEventListener("click", () => {
     if (box.querySelector(".cell h4").innerText !== "" || gameOver) return; // Stop if already filled or game over
 
-    let h4 = box.querySelector("h4"); 
-    h4.innerText = turnX ? "X" : "O"; 
-    h4.style.color = turnX ? "#007bff" : "#800080"; 
+    let h4 = box.querySelector("h4");
+    h4.innerText = turnX ? "X" : "O";
+    h4.style.color = turnX ? "#007bff" : "#800080";
     h4.style.textShadow = turnX
-      ? "2px 4px 8px rgba(1, 111, 231, 0.47)" 
-      : "2px 4px 8px rgba(89, 13, 143, 0.32)"; 
+      ? "2px 4px 8px rgba(1, 111, 231, 0.47)"
+      : "2px 4px 8px rgba(89, 13, 143, 0.32)";
 
     whichTurn();
 
@@ -86,7 +86,16 @@ const CheckWinner = () => {
       return;
     }
   }
+  if ([...cells].every((cell) => cell.innerText !== "")) {
+    gameDraw();
+    gameOver = true;
+  }
 };
+
+let gameDraw = () => {
+  winnerDisplay.innerText = "Match Tie!";
+  winnerDisplay.style.display = "flex";
+}
 
 var winnerDisplay = document.querySelector(".winner-display");
 var scoreX = document.querySelector(".score-x");
@@ -120,39 +129,39 @@ const enableBoxes = () => {
   }
 };
 
-let reset = document.querySelector(".restart"); 
+let reset = document.querySelector(".restart");
 
 reset.addEventListener("click", () => {
-  turnX = true; 
-  gameOver = false; 
-  scoreboard.style.display = "flex"; 
-  winnerDisplay.style.display = "none"; 
+  turnX = true;
+  gameOver = false;
+  scoreboard.style.display = "flex";
+  winnerDisplay.style.display = "none";
 
   // Reset all cells
   cells.forEach((box) => {
     let h4 = box.querySelector("h4");
-    h4.innerText = ""; 
-    h4.style.textShadow = "none"; 
+    h4.innerText = "";
+    h4.style.textShadow = "none";
   });
 
-  whichTurn(); 
+  whichTurn();
 });
 
-let newGame = document.querySelector(".new-game"); 
+let newGame = document.querySelector(".new-game");
 
 newGame.addEventListener("click", () => {
-  turnX = true; 
-  gameOver = false; 
-  scoreboard.style.display = "flex"; 
-  winnerDisplay.style.display = "none"; 
+  turnX = true;
+  gameOver = false;
+  scoreboard.style.display = "flex";
+  winnerDisplay.style.display = "none";
 
   cells.forEach((box) => {
     let h4 = box.querySelector("h4");
-    h4.innerText = ""; 
-    h4.style.textShadow = "none"; 
-    scoreX.innerHTML = '0';
-    scoreO.innerHTML = '0';
+    h4.innerText = "";
+    h4.style.textShadow = "none";
+    scoreX.innerHTML = "0";
+    scoreO.innerHTML = "0";
   });
 
-  whichTurn(); 
+  whichTurn();
 });

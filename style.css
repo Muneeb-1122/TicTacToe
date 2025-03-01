@@ -520,10 +520,6 @@ footer i {
         width: 100%;
     }
 
-    .controls {
-        /* display: none; */
-    }
-
     .player-x, .player-o {
         font-size: .8rem;
     }
