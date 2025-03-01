@@ -70,7 +70,8 @@ main {
     align-items: end;
     justify-content: center;
     width: 100%;
-    height: 80vh;
+    height: 83vh;
+    padding-bottom: 2rem;
 }
 
 .container {
@@ -265,6 +266,20 @@ body {
     color: #800080;
 }
 
+.winner-display {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem 0rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 1.39738rem;
+    background-color: red;
+    box-shadow: 0px 1.863px 7.453px 0px rgba(0, 0, 0, 0.08);
+    display: none;
+}
+
+
 .score {
     display: flex;
     justify-content: space-between;
@@ -274,13 +289,15 @@ body {
     border-radius: 1.39738rem;
     background-color: #fff;
     box-shadow: 0px 1.863px 7.453px 0px rgba(0, 0, 0, 0.08);
+    transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-.score-x, .score-o {
+.score-o {
     width: 50%;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 0px 50px 50px 0;
     padding: 0.5rem;
+    transition: all 1s cubic-bezier(0.19, 1, 0.22, 1) linear;
 }
 
 .score-x {
@@ -288,6 +305,10 @@ body {
     background: #016FE7;
     box-shadow: 0px 1.863px 7.453px 0px rgba(0, 0, 0, 0.08);
     color: #fff;
+    width: 50%;
+    text-align: center;
+    border-radius: 50px 0 0 50px;
+    padding: 0.5rem;
 }
 
 .board {
@@ -306,11 +327,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    /* background-color: #f9f9f9; */
+    cursor: pointer;
+}
+
+h4 {
     font-size: 2rem;
     font-weight: bold;
     color: #333;
-    /* background-color: #f9f9f9; */
-    cursor: pointer;
+    text-shadow: 2px 4px 8px rgba(1, 111, 231, 0.47);
 }
 
 .cell:nth-child(1) {
